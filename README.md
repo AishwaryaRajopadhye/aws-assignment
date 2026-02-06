@@ -34,14 +34,15 @@ aws-devops-assignment/
 ├── README.md
 ├── screenshots/
 
-## Clone repo
+### Clone repo
 git clone <your-repo-link>
+
 cd aws-devops-assignment
 
-## Run Container
+### Run Container
 docker compose up --build
 
-## Open browser
+### Open browser
 
 http://localhost:5000
 
@@ -55,7 +56,7 @@ http://localhost:5000
 docker compose up -d --build
 docker ps
 
-# AWS Setup
+## AWS Setup
 ## EC2 Setup
 - Launched Ubuntu t2.micro instance
 - Installed Docker & Docker Compose
