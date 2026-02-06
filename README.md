@@ -95,6 +95,53 @@ http://Elastic-ip:5000
 http://ALB-DNS
 
 
+# Troubleshooting Guide
+
+## App Not Accessible
+- Application is not opening in browser using:
+- http://public-ip:5000   or  
+- http://ALB-DNS
+
+## Solution
+- Required ports are not open in EC2 or ALB security group.
+Allow inbound rules:
+
+EC2:
+- TCP 5000 → 0.0.0.0/0
+- SSH 22 → Your IP
+
+ALB:
+- HTTP 80 → 0.0.0.0/0
+
+- Application container stopped or crashed.
+Check:
+
+docker ps 
+
+docker compose up -d
+
+docker logs flask-app
+
+## Container running but port not reachable
+- docker run myapp
+- docker run -p 5000:5000 myapp
+- docker compose up
+
+## ALB Health Check Failures
+- Target group shows:Unhealthy
+Check:
+
+Path: /
+
+Port: 5000 (traffic port)
+
+
+
+
+
+
+
+
 
 
 
